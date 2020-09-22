@@ -9,6 +9,5 @@ Probable entities needed:
 * Test
 * Question
 * Answer
-* TestManager
 * User
 * UserTest (holds current test results)
