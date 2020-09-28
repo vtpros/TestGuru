@@ -1,9 +1,12 @@
 class Test < ApplicationRecord
-  belongs_to :category
+  # belongs_to :category
 
   def self.tests_by_category(name)
-    category_id = Category.where(name: name).first.id
-    tests = Test.order(title: :desc).where(category_id: category_id).to_a
-    tests.map(&:title)
+    # I don't know how to 'return array of test titles'
+    # without using .to_a and .map
+    Test.joins("JOIN categories ON tests.category_id = categories.id")
+    .where("categories.name = ?", name)
+    .order(title: :desc)
+    .to_a.map(&:title)
   end
 end
