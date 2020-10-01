@@ -10,13 +10,17 @@ categories = Category.create!(
   [{name: 'Spanish'}, {name: 'Portuguese'}, {name: 'French'}]
 )
 
+users = User.create!(
+  [{name: 'Vladimir', username: 'vladimir', password: '123', email: 'v@v.com'}]
+)
+
 tests = Test.create!(
   [
-    {title: 'Basic spanish', level: 0, category_id: categories[0].id},
-    {title: 'Advanced spanish', level: 2, category_id: categories[0].id},
-    {title: 'Basic portuguese', level: 0, category_id: categories[1].id},
-    {title: 'Advanced portuguese', level: 2, category_id: categories[1].id},
-    {title: 'Basic french', level: 0, category_id: categories[2].id}
+    {title: 'Basic spanish', level: 0, category_id: categories[0].id, author_id: users[0].id},
+    {title: 'Advanced spanish', level: 2, category_id: categories[0].id, author_id: users[0].id},
+    {title: 'Basic portuguese', level: 0, category_id: categories[1].id, author_id: users[0].id},
+    {title: 'Advanced portuguese', level: 2, category_id: categories[1].id, author_id: users[0].id},
+    {title: 'Basic french', level: 0, category_id: categories[2].id, author_id: users[0].id}
   ]
 )
 
@@ -52,10 +56,6 @@ answers = Answer.create!(
     {body: 'Acabei de te ligar', question_id: questions[7].id, correct: true},
     {body: 'Te liguei', question_id: questions[7].id, correct: false}
   ]
-)
-
-users = User.create!(
-  [{name: 'Vladimir'}]
 )
 
 usertests = UserTest.create!(
