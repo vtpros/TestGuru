@@ -3,11 +3,5 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :body, presence: true
-  validate :number_of_answers, on: :save
-
-  def number_of_answers
-    unless (1..4).include?(answers.count)
-      errors.add(:answers, "should be 1 to 4")
-    end
-  end
+  validates :answers, presence: true, on: :save
 end
