@@ -6,7 +6,7 @@ class Answer < ApplicationRecord
 
   validates :body, presence: true
   validates :correct, inclusion: { in: [ true, false ] }
-  validate :max_answers
+  validate :max_answers, on: :save
 
   def max_answers
     if self.question.answers.count > MAX_NUM_ANSWERS
