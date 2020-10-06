@@ -16,11 +16,11 @@ users = User.create!(
 
 tests = Test.create!(
   [
-    {title: 'Basic spanish', level: 0, category: categories[0], author: users[0]},
+    {title: 'Basic spanish', level: 1, category: categories[0], author: users[0]},
     {title: 'Advanced spanish', level: 2, category: categories[0], author: users[0]},
-    {title: 'Basic portuguese', level: 0, category: categories[1], author: users[0]},
+    {title: 'Basic portuguese', level: 1, category: categories[1], author: users[0]},
     {title: 'Advanced portuguese', level: 5, category: categories[1], author: users[0]},
-    {title: 'Basic french', level: 1, category: categories[2], author: users[0]}
+    {title: 'Basic french', level: 3, category: categories[2], author: users[0]}
   ]
 )
 
@@ -41,6 +41,8 @@ answers = Answer.create!(
   [
     {body: 'Un perro', question: questions[0], correct: true},
     {body: 'Un gato', question: questions[0], correct: false},
+    {body: 'Una casa', question: questions[0], correct: false},
+    {body: 'Un cielo', question: questions[0], correct: false},
     {body: 'Un perro', question: questions[1], correct: false},
     {body: 'Un gato', question: questions[1], correct: true},
     {body: 'No lo he visto', question: questions[2], correct: true},
@@ -61,3 +63,8 @@ answers = Answer.create!(
 usertests = UserTest.create!(
   [{result: nil, completed: false, user: users[0], test: tests[0]}]
 )
+
+# Should fail
+# answers1 = Answer.create!( [{body: 'Una agua', question: questions[0], correct: true}] )
+# tests1 = Test.create!( [ {title: 'Basic spanish', level: 1, category: categories[0], author: users[0]} ] )
+# tests1 = Test.create!( [ {title: 'Medium spanish', level: 0, category: categories[0], author: users[0]} ] )
