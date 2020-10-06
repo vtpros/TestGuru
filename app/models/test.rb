@@ -23,5 +23,4 @@ class Test < ApplicationRecord
   def self.titles_by_category(name)
     by_category(name).pluck(:title)
   end
-
 end
