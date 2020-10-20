@@ -1,6 +1,6 @@
-<%= form_with(url: '../questions') do %>
-  <%= label_tag :body %>:<br>
-  <%= text_area_tag :body %><br>
+<%= form_with(url: '../questions') do |f| %>
+  <%= f.label(:body, 'New question:') %>:<br>
+  <%= f.text_area(:body) %><br>
 
-  <%= submit_tag("Send") %>
+  <%= f.submit("Send") %>
 <% end %>
