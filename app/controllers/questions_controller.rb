@@ -8,11 +8,9 @@ class QuestionsController < ApplicationController
     @questions = @test.questions
   end
 
-  def show
-  end
+  def show; end
 
-  def new
-  end
+  def new; end
 
   def create
     question = @test.questions.create!(question_params)
@@ -22,6 +20,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy!
+    render plain: "Question has been deleted", status: 200
   end
 
   private
@@ -35,10 +34,10 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.permit(:body)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found
-    render plain: "Question doesn't exist"
+    render plain: "Question doesn't exist", status: 404
   end
 end
