@@ -1,1 +1,6 @@
-<%= @questions.pluck(:body) %>
+<h2>
+  <%= pluralize(@questions.count, 'question', locale: :en) %>
+</h2>
+<ul>
+  <%= render @questions %>
+</ul>

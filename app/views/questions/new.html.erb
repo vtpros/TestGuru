@@ -1,6 +1,7 @@
-<%= form_with(url: test_questions_path(@test)) do |f| %>
-  <%= f.label(:'question[body]', 'New question:') %>:<br>
-  <%= f.text_area(:'question[body]') %><br>
+<%= question_header(@test, :create) %>
+<%= form_with(model: [@test, @question]) do |f| %>
+  <%= f.label(:'body', 'New question') %>:<br>
+  <%= f.text_area(:'body') %><br>
 
   <%= f.submit("Send") %>
 <% end %>
