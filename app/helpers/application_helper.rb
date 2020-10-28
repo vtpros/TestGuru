@@ -1,9 +1,9 @@
 module ApplicationHelper
   def current_year
-    Time.now.year
+    Time.current.year
   end
 
-  def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}/"
+  def github_url(options)
+    link_to options[:text], "https://github.com/#{options[:author]}/#{options[:repo]}/"
   end
 end

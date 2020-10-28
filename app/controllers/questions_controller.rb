@@ -1,34 +1,36 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create new]
+  before_action :find_test, only: %i[create new]
   before_action :find_question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = @test.questions
-  end
-
   def show; end
 
-  def new
-    @question = Question.new
-  end
+  def new; end
 
   def create
-    question = @test.questions.create!(question_params)
-
-    redirect_to question
+    @question = @test.questions.create(question_params)
+    if @question.persisted?
+      redirect_to @question
+    else
+      render :new
+    end  
   end
 
   def edit; end
 
   def update
-    @question.update(question_params) ? (render :show) : (render :edit)
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
+    test = @question.test
     @question.destroy!
-    render html: "<h4>Question has been deleted</h4>".html_safe, status: :ok
+    redirect_to test
   end
 
   private
@@ -46,6 +48,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render html: helpers.tag.strong("Question doesn't exist"), status: :not_found
+    render 'shared/errors/record_not_found', status: :not_found
   end
 end

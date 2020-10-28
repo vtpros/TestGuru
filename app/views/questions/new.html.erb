@@ -1,7 +1,6 @@
-<%= question_header(@test, :create) %>
-<%= form_with(model: [@test, @question]) do |f| %>
-  <%= f.label(:'body', 'New question') %>:<br>
-  <%= f.text_area(:'body') %><br>
-
-  <%= f.submit("Send") %>
+<% if @question&.errors.present? %>
+  <%= render 'shared/errors/errors_list', errors: @question.errors %>
 <% end %>
+<% @question = Question.new %>
+
+<%= render 'shared/question_form', model: [@test, @question] %>

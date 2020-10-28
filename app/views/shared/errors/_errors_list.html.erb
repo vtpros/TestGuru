@@ -1,0 +1,7 @@
+<ul class='error'>
+  <%= tag.strong 'Errors detected' %>
+  <% errors.each do |field, message| %>
+    <li><%= "#{field} #{message}" %></li>
+  <% end %>
+</ul>
+<% console %>
