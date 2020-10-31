@@ -36,7 +36,7 @@ class TestsController < ApplicationController
     if @test.destroy
       redirect_to action: :index
     else
-      render 'shared/errors/_errors_list', errors: @test.errors
+      render 'shared/errors/_errors_list', resource: @test
     end
   end
 

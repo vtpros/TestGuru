@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
     if @question.destroy
       redirect_to @question.test
     else
-      render 'shared/errors/_errors_list', errors: @question.errors
+      render 'shared/errors/_errors_list', resource: @question
     end
   end
 
