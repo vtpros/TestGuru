@@ -1,0 +1,6 @@
+<% if @test&.errors.present? %>
+  <%= render 'shared/errors/errors_list', resource: @test %>
+<% end %>
+<% @test = Test.new %>
+
+<%= render 'shared/test_form.html.erb', model: @test %>

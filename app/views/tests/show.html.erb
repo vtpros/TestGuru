@@ -1,5 +1,15 @@
 <h1>Test:</h1>
-<%= @test.title %><br><br>
+<p>
+  <%= @test.title %>
+    (
+    <%= link_to 'edit', edit_test_path(@test) %>,
+    <%= link_to 'delete',
+                test_path(@test),
+                method: :delete,
+                data: {confirm: 'Are you sure?'}
+    %>
+    )
+<p/>
 <h2>
   <%= pluralize(@questions.count, 'question', locale: :en) %>
 </h2>
@@ -7,5 +17,5 @@
   <%= render @questions %>
 </ul>
 <p>
-  <%= link_to 'Add question', new_test_question_path(@test) %>
+  <%= link_to 'Add a question', new_test_question_path(@test) %>
 </p>

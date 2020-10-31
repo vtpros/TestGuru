@@ -9,12 +9,12 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    @question = @test.questions.create(question_params)
-    if @question.persisted?
+    @question = @test.questions.new(question_params)
+    if @question.save
       redirect_to @question
     else
       render :new
-    end  
+    end
   end
 
   def edit; end
@@ -28,9 +28,11 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    test = @question.test
-    @question.destroy!
-    redirect_to test
+    if @question.destroy
+      redirect_to @question.test
+    else
+      render 'shared/errors/_errors_list', errors: @question.errors
+    end
   end
 
   private
