@@ -11,7 +11,9 @@ class TestsController < ApplicationController
     @questions = @test.questions
   end
 
-  def new; end
+  def new
+    @test = Test.new
+  end
 
   def create
     @test = Test.new(test_params)
@@ -33,11 +35,8 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    if @test.destroy
-      redirect_to action: :index
-    else
-      render 'shared/errors/_errors_list', resource: @test
-    end
+    @test.destroy
+    redirect_to action: :index    
   end
 
   private

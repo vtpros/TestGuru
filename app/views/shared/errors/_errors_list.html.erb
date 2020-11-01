@@ -1,6 +1,8 @@
-<ul class='error'>
-  <%= tag.strong 'Errors detected' %>
-  <% resource.errors.full_messages.each do |message| %>
-    <li><%= "#{message}" %></li>
-  <% end %>
-</ul>
+<% if resource.errors.present? %>
+  <ul class='error'>
+    <%= tag.strong 'Errors detected' %>
+    <% resource.errors.full_messages.each do |message| %>
+      <li><%= "#{message}" %></li>
+    <% end %>
+  </ul>
+<% end %>

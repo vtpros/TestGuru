@@ -1,6 +1,4 @@
-<% if @question.errors.present? %>
-  <%= render 'shared/errors/errors_list', resource: @question %>
-<% end %>
+<%= render 'shared/errors/errors_list', resource: @question %>
 
 <%= question_header(@question) %>
 <%= form_with(model: model, local: true) do |f| %>

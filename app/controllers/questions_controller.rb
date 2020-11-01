@@ -19,22 +19,22 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @test = @question.test
+  end
 
   def update
     if @question.update(question_params)
       redirect_to @question
     else
+      @test = @question.test
       render :edit
     end
   end
 
   def destroy
-    if @question.destroy
-      redirect_to @question.test
-    else
-      render 'shared/errors/_errors_list', resource: @question
-    end
+    @question.destroy
+    redirect_to @question.test
   end
 
   private
