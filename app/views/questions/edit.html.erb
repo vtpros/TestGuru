@@ -1,6 +1,3 @@
-<% if @question.errors.present? %>
-  <%= render 'shared/errors/errors_list', resource: @question %>
-<% end %>
 <% @test = @question.test %>
 
 <%= render 'shared/question_form', model: @question %>

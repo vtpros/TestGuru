@@ -1,4 +1,8 @@
-<%= question_header(@test) %>
+<% if @question.errors.present? %>
+  <%= render 'shared/errors/errors_list', resource: @question %>
+<% end %>
+
+<%= question_header(@question) %>
 <%= form_with(model: model, local: true) do |f| %>
   <%= f.label(:body, 'Question text:') %><br>
   <%= f.text_field(:'body') %><br>
