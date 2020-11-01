@@ -1,0 +1,14 @@
+<%= render 'shared/errors/errors_list', resource: @test %>
+
+<%= form_with(model: @test, local: true) do |f| %>
+  <%= f.label(:title, 'Title') %><br>
+  <%= f.text_field(:title) %><br>
+  <%= f.label(:level, 'Level') %><br>
+  <%= f.number_field(:level) %><br>
+  <%= f.label(:category_id, 'Category') %><br>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true) %><br>
+  <%= f.label(:author_id, 'Author') %><br>
+  <%= f.collection_select(:author_id, User.all, :id, :name, prompt: true) %><br>
+
+  <%= f.submit %>
+<% end %>
