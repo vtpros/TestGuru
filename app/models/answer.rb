@@ -1,6 +1,6 @@
 class Answer < ApplicationRecord
   MAX_NUM_ANSWERS = 4
-  
+
   belongs_to :question
 
   validates :body, presence: true
