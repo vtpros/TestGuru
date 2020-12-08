@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_tests, only: %i[show update] do
+  resources :user_tests, only: %i[index show update] do
     member do
       get :result
     end

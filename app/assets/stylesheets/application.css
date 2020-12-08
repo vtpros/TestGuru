@@ -14,3 +14,5 @@
  *= require_self
  */
 .error {color: red}
+.failure {color: red}
+.success {color: green}

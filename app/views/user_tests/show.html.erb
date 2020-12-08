@@ -1,4 +1,7 @@
-<h1>Passing the "<%= @user_test.test.title %>" Test</h1><br>
+<h1>"<%= @user_test.test.title %>" Test</h1><br>
+
+<p>Question <%= @user_test.test.questions.index(@user_test.current_question)+1 %>
+out of <%= @user_test.test.questions.count %></p>
 
 <h2><%= @user_test.current_question.body %></h2><br>
 
