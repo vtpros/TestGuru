@@ -2,9 +2,9 @@
 <p>
   Questions answered correctly: <%= @user_test.correct_questions %> out of
   <%= @user_test.test.questions.count %>, <%= @user_test.result %> %<br>
-  <% if @user_test.result <= 85 %>
-    <p class='failure'>Test failed.</p>
-  <% else %>
+  <% if @user_test.success? %>
     <p class='success'>You have passed the test.</p>
+  <% else %>
+    <p class='failure'>Test failed.</p>
   <% end %>
 </p>

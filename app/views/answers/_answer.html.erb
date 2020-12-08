@@ -1,9 +1,9 @@
 <li>
   <%= answer.body %>
-  (<%= link_to 'show', answer_path(answer)  %>,
+ (<%= link_to 'show', answer_path(answer)  %>,
   <%= link_to 'edit', edit_answer_path(answer) %>,
   <%= link_to 'delete',
               answer_path(answer),
-						  method: :delete,
-						  data: { confirm: 'Are you sure?' } %>)
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>)
 </li>

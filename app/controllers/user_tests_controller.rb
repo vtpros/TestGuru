@@ -5,7 +5,9 @@ class UserTestsController < ApplicationController
     @user_tests = UserTest.all
   end
 
-  def show; end
+  def show
+    render :result if @user_test.completed?
+  end
 
   def result; end
 
@@ -24,8 +26,4 @@ class UserTestsController < ApplicationController
   def find_user_test
     @user_test = UserTest.find(params[:id])
   end
-
-  #def user_test_params
-    #params.require(:answer).permit(:answer_ids)
-  #end
 end
