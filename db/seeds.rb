@@ -60,7 +60,7 @@ answers = Answer.create!(
   ]
 )
 
-usertests = UserTest.create!(
+test_passages = TestPassage.create!(
   [{result: nil, completed: false, user: users[0], test: tests[0]}]
 )
 

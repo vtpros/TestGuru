@@ -1,4 +1,5 @@
 <li>
   <%= link_to "#{test.title}", test_path(test) %>,
+  level: <%= test.level %>,
   <%= pluralize(test.questions.count, 'question', locale: :en) %>
 </li>

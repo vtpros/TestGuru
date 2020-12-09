@@ -10,4 +10,4 @@ Probable entities needed:
 * Question
 * Answer
 * User
-* UserTest (holds current test results)
+* TestPassage (holds current test results)
