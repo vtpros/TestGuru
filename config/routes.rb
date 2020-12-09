@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-  resources :user_tests, only: %i[index show update] do
-    post :result, on: :member
+  resources :test_passages, only: %i[index show update] do
+    get :result, on: :member
   end
 end

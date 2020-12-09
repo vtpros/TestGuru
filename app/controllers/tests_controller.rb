@@ -42,9 +42,9 @@ class TestsController < ApplicationController
   def start
     @user = User.first
     @user.tests.push(@test)
-    redirect_to @user.user_test(@test)
+    redirect_to @user.test_passage(@test)
   end
-  
+
   private
 
   def find_test

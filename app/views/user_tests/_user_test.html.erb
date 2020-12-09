@@ -1,8 +1,0 @@
-<li>
- "<%= user_test.test.title %>",
-  <% if user_test.completed? %>
-    test completed, <%= user_test.result %> %.
-  <% else %>
-    <%= link_to 'continue test', user_test_path(user_test) %>
-  <% end %>
-</li>

@@ -1,0 +1,8 @@
+<li>
+ "<%= test_passage.test.title %>",
+  <% if test_passage.completed? %>
+    test completed, <%= test_passage.result %> %.
+  <% else %>
+    <%= link_to 'continue test', test_passage_path(test_passage) %>
+  <% end %>
+</li>

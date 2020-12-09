@@ -1,10 +1,12 @@
-class UserTest < ApplicationRecord
+class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name:'Question',
              foreign_key: :current_question_id, optional: true
 
   before_save :before_save_set_next_question, unless: :completed?
+
+  SUCCESS_PERCENTAGE = 85
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
@@ -14,12 +16,13 @@ class UserTest < ApplicationRecord
   end
 
   def set_result
+    # sets percentage of corretly answered questions
     self.result = (correct_questions.to_f / test.questions.count * 100).to_i
     save!
   end
 
   def success?
-    result <= 85
+    result >= SUCCESS_PERCENTAGE
   end
 
   private
