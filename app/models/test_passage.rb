@@ -16,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def set_result
-    # sets percentage of corretly answered questions
+    # sets percentage of correctly answered questions
     self.result = (correct_questions.to_f / test.questions.count * 100).to_i
     save!
   end
