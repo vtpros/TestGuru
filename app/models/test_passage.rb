@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_next_question, unless: :completed?
 
-  SUCCESS_PERCENTAGE = 85
+  SUCCESS_PERCENTAGE = 85.freeze
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
