@@ -1,3 +1,6 @@
 <%= link_to 'Home', root_path %>
 <%= link_to 'Tests', tests_path %>
-<%= link_to 'TestPassages', test_passages_path %><br>
+<%= link_to 'TestPassages', test_passages_path %>
+<% if logged_in? %>
+  <%= link_to 'Logout', logout_path %><br>
+<% end %>
