@@ -1,8 +1,9 @@
 class TestPassagesController < ApplicationController
+  
   before_action :find_test_passage, only: %i[show update result]
 
   def index
-    @test_passages = TestPassage.all
+    @test_passages = TestPassage.by_user(current_user)
   end
 
   def show

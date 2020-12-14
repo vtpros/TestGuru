@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_next_question, unless: :completed?
 
+  scope :by_user, ->(user) { where(user: user) }
+
   SUCCESS_PERCENTAGE = 85.freeze
 
   def accept!(answer_ids)

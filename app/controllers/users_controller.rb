@@ -7,13 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    if user_params[:email].exclude?('@')
-      redirect_to login_path, alert: 'Invalid e-mail address'
-    elsif exists?
-      redirect_to login_path, alert: 'Account with this email already exists'
-    else
-      @user = User.new(user_params)
+    @user = User.new(user_params)
 
+    if @user.email.exclude?('@')
+      redirect_to signup_path, alert: 'Invalid e-mail address'
+    elsif exists?
+      redirect_to signup_path, alert: 'Account with this email already exists'
+    else
       if @user.save
         redirect_to login_path
       else

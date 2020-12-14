@@ -1,5 +1,6 @@
 <%= form_with model: @user, local: true do |f| %>
   <%= render 'shared/errors/errors_list', resource: @user %>
+  <%= flash_msg %>
 
   <p>
     <%= f.label :email %><br>
