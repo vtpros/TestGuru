@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "tests#index"
+  root to: 'tests#index'
 
   get :signup, to: 'users#new'
   get :login, to: 'sessions#new'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: :create
 
   resources :tests do
-    resources :questions, shallow: true , except: :index do
+    resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
 
