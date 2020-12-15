@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :find_test, only: %i[show edit update destroy start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -41,8 +40,8 @@ class TestsController < ApplicationController
     redirect_to action: :index
   end
 
-  def start    
-    if @test.questions.blank? || @test.questions.any? {|q| q.answers.blank?}
+  def start
+    if @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
       redirect_to @test, alert: 'Test have questions without answers or no questions'
     else
       @user = current_user

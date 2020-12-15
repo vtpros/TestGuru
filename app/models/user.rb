@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-
-  has_many :created_tests, class_name:'Test', foreign_key: :author_id,
-           dependent: :restrict_with_error
+  has_many :created_tests, class_name: 'Test',
+                           dependent: :restrict_with_error,
+                           inverse_of: :author
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 

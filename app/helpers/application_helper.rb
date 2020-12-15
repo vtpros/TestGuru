@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def flash_msg
-    content_tag :p, flash[:alert], class: 'flash alert' if flash[:alert]
+    tag.p flash[:alert], class: 'flash alert' if flash[:alert]
   end
 end
