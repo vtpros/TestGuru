@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   skip_before_action :authenticate_user!
 
+  include Authenticatible
+
   def new
     @user = User.new
   end
@@ -15,7 +17,8 @@ class UsersController < ApplicationController
       redirect_to signup_path, alert: 'Account with this email already exists'
     else
       if @user.save
-        redirect_to login_path
+        authenticate(user_params[:email], user_params[:password])
+        #redirect_to login_path
       else
         render :new
       end
