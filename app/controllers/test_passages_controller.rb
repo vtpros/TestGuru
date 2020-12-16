@@ -25,6 +25,6 @@ class TestPassagesController < ApplicationController
   private
 
   def find_test_passage
-    @test_passage = TestPassage.find(params[:id])
+    @test_passage ||= TestPassage.find(params[:id])
   end
 end

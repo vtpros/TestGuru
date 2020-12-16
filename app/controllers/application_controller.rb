@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user,
-                :logged_in?,
-                :authenticate_user!
-
   private
+
+  helper_method :current_user,
+                :logged_in?                
 
   def authenticate_user!
     unless current_user

@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to session[:URI] || root_path
-      session.delete(:URI)
+      redirect_to session.delete(:URI) || root_path
     else
       flash.now[:alert] = 'Are you a Guru? Verify your email and password please'
       render :new

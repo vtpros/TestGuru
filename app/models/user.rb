@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
 
   validates :name, :password, :email, presence: true
-  validates :email, format: { with: /@/ },
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },
                     uniqueness: true
 
   has_secure_password

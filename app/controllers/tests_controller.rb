@@ -54,7 +54,7 @@ class TestsController < ApplicationController
   private
 
   def find_test
-    @test = Test.find(params[:id])
+    @test ||= Test.find(params[:id])
   end
 
   def test_params
