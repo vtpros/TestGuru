@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 
+  validates :name, :password, :email, presence: true
+  validates :email, format: { with: /@/ },
+                    uniqueness: true
+
   has_secure_password
 
   def test_passage(test)

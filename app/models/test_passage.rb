@@ -38,7 +38,7 @@ class TestPassage < ApplicationRecord
 
   def before_save_set_next_question
     current_id = current_question ? current_question.id : 0
-    next_question = test.questions.order(:id).where('id > :id', id: current_id).find_by(1)
+    next_question = test.questions.order(:id).find_by('id > :id', id: current_id)
     next_question.nil? ? self.completed = true : self.current_question = next_question
   end
 end

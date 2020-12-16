@@ -11,7 +11,7 @@ categories = Category.create!(
 )
 
 users = User.create!(
-  [{ email: 'v@v.com', password: '123' }]
+  [{ name: 'Vladimir', email: 'v@v.com', password: '123' }]
 )
 
 tests = Test.create!(
@@ -60,9 +60,9 @@ answers = Answer.create!(
   ]
 )
 
-test_passages = TestPassage.create!(
-  [{ result: nil, completed: false, user: users[0], test: tests[0] }]
-)
+# test_passages = TestPassage.create!(
+#   [{ result: nil, completed: false, user: users[0], test: tests[0] }]
+# )
 
 # Should fail
 # answers1 = Answer.create!( [{ body: 'Una agua', question: questions[0], correct: true }] )
