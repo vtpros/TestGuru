@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to session.delete(:URI) || root_path  
+      redirect_to session.delete(:URI) || root_path
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
       render :new

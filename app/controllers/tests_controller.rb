@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :_test, only: %i[show edit update destroy start]
   before_action :test_completeness, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -50,7 +50,7 @@ class TestsController < ApplicationController
 
   private
 
-  def find_test
+  def _test
     @test ||= Test.find(params[:id])
   end
 
@@ -63,8 +63,8 @@ class TestsController < ApplicationController
   end
 
   def test_completeness
-    if @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
-      redirect_to @test, alert: 'Test has not been completed'
-    end
+    return unless @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
+
+    redirect_to @test, alert: 'Test has not been completed'
   end
 end
