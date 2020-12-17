@@ -3,7 +3,7 @@ class DropTableUserTests < ActiveRecord::Migration[6.0]
     drop_table :user_tests do |t|
       t.references :user, null: false, foreign_key: true
       t.references :test, null: false, foreign_key: true
-      t.references :current_question, foreign_key: {to_table: :questions}, default: nil
+      t.references :current_question, foreign_key: { to_table: :questions }, default: nil
       t.integer :correct_questions, default: 0
       t.integer :result
       t.boolean :completed

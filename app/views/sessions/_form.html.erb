@@ -1,0 +1,15 @@
+<%= form_with url: sessions_path, local: true do |f| %>
+  <%= flash_msg(:alert) %>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email, id: :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, id: :password %>
+  </p>
+
+  <p><%= f.submit 'Login' %></p>
+<% end %>

@@ -1,5 +1,7 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :authenticate_user!
+  before_action :_test, only: %i[show edit update destroy start]
+  before_action :test_completeness, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -17,6 +19,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
+    @test.author = current_user
     if @test.save
       redirect_to @test
     else
@@ -40,15 +43,15 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user = User.first
+    @user = current_user
     @user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end
 
   private
 
-  def find_test
-    @test = Test.find(params[:id])
+  def _test
+    @test ||= Test.find(params[:id])
   end
 
   def test_params
@@ -57,5 +60,11 @@ class TestsController < ApplicationController
 
   def rescue_with_test_not_found
     render 'shared/errors/record_not_found', status: :not_found
+  end
+
+  def test_completeness
+    return unless @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
+
+    redirect_to @test, alert: 'Test has not been completed'
   end
 end

@@ -13,7 +13,13 @@
 
   <body>
     <%= render 'shared/nav' %>
+
+    <% if logged_in? %>
+      <div class="nav user">Welcome, <%= current_user.name %> Guru</div>
+    <% end %>
+
     <%= yield %>
+
     <%= render 'shared/footer' %>
   </body>
 </html>
