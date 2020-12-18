@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!
   before_action :_question, only: %i[new create]
   before_action :_answer, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   def show; end
 

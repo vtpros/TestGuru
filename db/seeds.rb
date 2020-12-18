@@ -11,7 +11,7 @@ categories = Category.create!(
 )
 
 users = User.create!(
-  [{ name: 'Vladimir', email: 'v@v.com', password: '123' }]
+  [{ name: 'Vladimir', email: 'v@v.com', password: '123123' }]
 )
 
 tests = Test.create!(

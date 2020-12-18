@@ -9,7 +9,15 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },
                     uniqueness: true
 
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :lockable, :timeoutable, and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test: test)
