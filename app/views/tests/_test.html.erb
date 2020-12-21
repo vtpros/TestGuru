@@ -1,5 +1,6 @@
-<li>
-  <%= link_to "#{test.title}", test_path(test) %>,
-  level: <%= test.level %>,
-  <%= pluralize(test.questions.count, 'question', locale: :en) %>
-</li>
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test.level %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= button_to 'start', start_test_path(test) %></td>
+</tr>

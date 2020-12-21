@@ -1,0 +1,26 @@
+<h1>Test:</h1>
+<%= flash_msg(:alert) %>
+<p>
+  <strong><%= @test.title %></strong>,
+  level: <%= @test.level %>
+</p>
+<p>Actions:
+    <%= link_to 'edit', edit_admin_test_path(@test) %>,
+    <%= link_to 'delete',
+                admin_test_path(@test),
+                method: :delete,
+                data: {confirm: 'Are you sure?'}
+    %>
+
+    <%= button_to 'start', start_test_path(@test) %>
+</p>
+<h2>
+  <%= pluralize(@test.questions.count, 'question', locale: :en) %>
+</h2>
+<ul>
+  <%= render partial: 'questions/question', collection: @test.questions %>
+</ul>
+<p>
+  <%= link_to 'Add a question', new_test_question_path(@test) %>
+</p>
+<p><%= link_to 'Back', admin_test_path(@test) %></p>

@@ -12,16 +12,9 @@
   </head>
 
   <body>
-    <%= render 'shared/nav' %>
+    <%= render 'admin/nav' %>
 
     <%= render 'shared/flash' %>
-
-    <% if user_signed_in? %>
-      <div class="nav user">
-        Welcome, <%= current_user.first_name %> Guru |
-        <%= link_to 'Logout', :destroy_user_session, method: :delete %>
-      </div>
-    <% end %>
 
     <%= yield %>
 
