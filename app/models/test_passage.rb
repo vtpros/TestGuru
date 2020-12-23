@@ -24,6 +24,10 @@ class TestPassage < ApplicationRecord
     result >= SUCCESS_PERCENTAGE
   end
 
+  def current_question_index    
+    test.questions.index { |q| q.id == current_question.id } + 1
+  end
+
   private
 
   def correct_answers
@@ -31,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers&.ids&.sort == answer_ids.map(&:to_i).sort
   end
 
   def before_save_set_next_question
