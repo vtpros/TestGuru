@@ -11,8 +11,12 @@ categories = Category.create!(
 )
 
 users = User.create!(
-  [{ name: 'Vladimir', email: 'v@v.com', password: '123' }]
+  [
+    { type: Admin, first_name: 'Vladimir', last_name: 'T', email: 'v@v.com', password: '123123' },
+    { type: User, first_name: 'Vladimir', last_name: 'T', email: 'v@v.ru', password: '123123' }
+  ]
 )
+users.each(&:confirm)
 
 tests = Test.create!(
   [

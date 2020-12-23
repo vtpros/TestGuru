@@ -1,23 +1,22 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   private
 
-  helper_method :current_user,
-                :logged_in?
-
-  def authenticate_user!
-    unless current_user
-      session[:URI] = request.url
-      redirect_to login_path, alert: 'Are you a Guru? Verify your email and password please'
-    end
-
-    cookies[:email] = @current_user&.email
+  def configure_permitted_parameters
+    permitted_list = %i[first_name last_name]
+    devise_parameter_sanitizer.permit(:sign_up, keys: permitted_list)
+    devise_parameter_sanitizer.permit(:account_update, keys: permitted_list)
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  # custom devise redirect path for Admin login
+  def after_sign_in_path_for(resource)
+    (admin_tests_path if current_user&.is_a?(Admin)) || super
   end
 
-  def logged_in?
-    current_user.present?
+  # custom flash notice on devise sign_in
+  def sign_in(resource_or_scope, *args)
+    flash[:notice] = "Hello, #{current_user.first_name}!"
+    super
   end
 end

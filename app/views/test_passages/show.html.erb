@@ -1,6 +1,6 @@
 <h1>"<%= @test_passage.test.title %>" Test</h1><br>
 
-<p>Question <%= @test_passage.test.questions.index(@test_passage.current_question)+1 %>
+<p>Question <%= @test_passage.current_question_index %>
 out of <%= @test_passage.test.questions.count %></p>
 
 <h2><%= @test_passage.current_question.body %></h2><br>
