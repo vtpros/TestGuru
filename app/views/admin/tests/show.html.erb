@@ -18,9 +18,9 @@
   <%= pluralize(@test.questions.count, 'question', locale: :en) %>
 </h2>
 <ul>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @test.questions  %>
 </ul>
 <p>
-  <%= link_to 'Add a question', new_test_question_path(@test) %>
+  <%= link_to 'Add a question', new_admin_test_question_path(@test) %>
 </p>
-<p><%= link_to 'Back', admin_test_path(@test) %></p>
+<p><%= link_to 'Back', admin_tests_path %></p>
