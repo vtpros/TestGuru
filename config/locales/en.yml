@@ -31,3 +31,24 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Tricky tests"
+
+  tests:
+    index:
+      header: 'Tricky tests'
