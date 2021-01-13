@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <div class="nav user">
+    <%= t('app.welcome') %>, <%= current_user.first_name %>
+    <%= t('app.guru') %> |&nbsp;
+    <%= link_to t('app.logout'), :destroy_user_session, method: :delete %>
+  </div>
+<% end %>

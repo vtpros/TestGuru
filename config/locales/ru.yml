@@ -1,6 +1,31 @@
 ru:
-  hello: "Привет, мир"
+  app:
+    test: "Тест"
+    tests: "Тесты"
+    question: "Вопрос"
+    questions: "Вопросы"
+    answer: 'Ответ'
+    answers: 'Ответы'
+    test_passages: "Прохождения тестов"
+    title: "Название"
+    level: "Уровень"
+    show: "Перейти"
+    edit: "Редактировать"
+    delete: "Удалить"
+    sure?: "Вы уверены?"
+    back: "Назад"
+    actions: "Действия"
+    start: "Начать"
 
+    panel: "Панель администратора TestGuru"
+    home: "Главная"
+    welcome: "Добро пожаловать"
+    hello: "Привет"
+    guru: "Гуру"
+    logout: "Выйти"
+    project: "Учебный проект"
+    school_html: "в онлайн школе <a href='http://thinknetica.com/'>Thinknetica</a>"
+    unauthorized: "У вас нет прав для просмотра данной страницы"
   helpers:
     submit:
       test:
@@ -15,9 +40,56 @@ ru:
     tests:
       create:
         success: "Тест успешно создан"
+      update:
+        success: "Тест успешно обновлен"
       index:
         header: "Доступные тесты"
-
+        new_test: "Новый тест"
+      new:
+        header: "Новый тест"
+      edit:
+        header: "Редактировать тест"
+      show:
+        header: "Тест"
+        start: "Начать"
+        questions:
+          zero: "вопросов"
+          one: "вопрос"
+          few: "вопроса"
+          other: "вопросов"
+        add: "Добавить вопрос"
+      test:
+        show: "Перейти"
+        edit: "Редактировать"
+        delete: "Удалить"
+      test_completeness:
+        not_completed: 'Выбранный тест не завершён'
+    questions:
+      show:
+        new: 'Новый вопрос'
+      question:
+        text: "Текст вопроса:"
+  categories:
+    Spanish: "Испанский"
+    Portuguese: "Португальский"
+    French: "Французский"
   tests:
     index:
       header: 'Доступные тесты'
+    test_completeness:
+      not_completed: 'Выбранный тест не завершён'
+  test_passages:
+    index:
+      header: "Прохожения тестов"
+    show:
+      outof: "из"
+      next: "Следующий"
+    result:
+      header: "тест был завершен"
+      correct: "Правильных ответов на вопросы"
+      outof: "из"
+      success: "Тест успешно пройден"
+      failure: "Тест не пройден"
+    test_passage:
+      completed: "тест завершен"
+      continue: "продолжить прохождение"

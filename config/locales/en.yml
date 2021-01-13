@@ -30,9 +30,40 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    test: "Test"
+    tests: "Tests"
+    question: "Question"
+    questions: "Questions"
+    answer: 'Answer'
+    answers: 'Answers'
+    test_passages: "TestPassages"
+    title: "Title"
+    level: "Level"
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    sure?: "Are you sure?"
+    back: "Back"
+    actions: "Actions"
+    start: "Start"
 
+    panel: "TestGuru Admin Panel"
+    home: "Home"
+    tests: "Tests"
+    welcome: "Welcome"
+    hello: "Hello"
+    guru: "Guru"
+    logout: "Logout"
+    project: "Study project"
+    school_html: "in <a href='http://thinknetica.com/'>Thinknetica</a> online school"
+    unauthorized: "You are not authorized to view this page"
   helpers:
+    select:
+      prompts:
+        Spanish: "Spanish"
+        Portuguese: "Portuguese"
+        French: "French"
     submit:
       test:
         create: "Create test"
@@ -46,9 +77,55 @@ en:
     tests:
       create:
         success: "Test was successfully created"
+      update:
+        success: "Test was successfully updated"
       index:
         header: "Tricky tests"
-
+        new_test: "New test"
+      new:
+        header: "New test"
+      edit:
+        header: "Edit test"
+      show:
+        header: "Test"
+        start: "Start"
+        questions:
+          zero: "questions"
+          one: "question"
+          other: "questions"
+        add: "Add a question"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      test_completeness:
+        not_completed: "Selected test has not been completed"
+    questions:
+      show:
+        new: 'New answer'
+      question:
+        text: "Question text:"
+  categories:
+    Spanish: "Spanish"
+    Portuguese: "Portuguese"
+    French: "French"
   tests:
     index:
-      header: 'Tricky tests'
+      header: "Tricky tests"
+    test_completeness:
+      not_completed: "Selected test has not been completed"
+  test_passages:
+    index:
+      header: "Test passages"
+    show:
+      outof: "out of"
+      next: "next"
+    result:
+      header: "test was completed"
+      correct: "Questions answered correctly"
+      outof: "out of"
+      success: "You have passed the test"
+      failure: "Test failed"
+    test_passage:
+      completed: "test completed"
+      continue: "continue test"

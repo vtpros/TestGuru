@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      Test: "Test"
+      Question: "Question"
+      Answer: "Answer"
+      TestPassage: "Test Passage"

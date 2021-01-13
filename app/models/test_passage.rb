@@ -36,7 +36,7 @@ class TestPassage < ApplicationRecord
 
   def correct_answer?(answer_ids)
     # safe navigation used in case correct answer missing in the question
-    correct_answers&.ids&.sort == answer_ids.map(&:to_i).sort
+    correct_answers&.ids&.sort == answer_ids&.map(&:to_i)&.sort
   end
 
   def before_save_set_next_question

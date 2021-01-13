@@ -11,7 +11,7 @@
   </p>
   <p>
     <%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :i18n_name, prompt: true %><br>
   </p>
 
   <p><%= f.submit %></p>

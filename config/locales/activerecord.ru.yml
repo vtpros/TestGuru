@@ -1,10 +1,10 @@
-ru
+ru:
   activerecord:
     models:
-      Test: "Test" "Тест"
-      Question:
-      Answer:
-      TestPassage:
+      Test: "Тест"
+      Question: "Вопрс"
+      Answer: "Ответ"
+      TestPassage: "Прохождение теста"
 
 
     date:
