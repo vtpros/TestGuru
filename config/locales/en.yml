@@ -51,9 +51,8 @@ en:
     panel: "TestGuru Admin Panel"
     home: "Home"
     tests: "Tests"
-    welcome: "Welcome"
-    hello: "Hello"
-    guru: "Guru"
+    welcome: "Welcome, %{name} Guru"
+    hello: "Hello, %{name}!"
     logout: "Logout"
     project: "Study project"
     school_html: "in <a href='http://thinknetica.com/'>Thinknetica</a> online school"
@@ -81,9 +80,9 @@ en:
         success: "Test was successfully updated"
       index:
         header: "Tricky tests"
-        new_test: "New test"
+        new_test: &new_test "New test"
       new:
-        header: "New test"
+        header: *new_test
       edit:
         header: "Edit test"
       show:
@@ -101,10 +100,19 @@ en:
       test_completeness:
         not_completed: "Selected test has not been completed"
     questions:
+      create:
+        success: "Question was successfully created"
+      update:
+        success: "Question was successfully updated"
       show:
-        new: 'New answer'
+        new_answer: 'New answer'
       question:
         text: "Question text:"
+    answers:
+      create:
+        success: "Answer was successfully created"
+      update:
+        success: "Answer was successfully updated"
   categories:
     Spanish: "Spanish"
     Portuguese: "Portuguese"
@@ -118,12 +126,11 @@ en:
     index:
       header: "Test passages"
     show:
-      outof: "out of"
+      question: "Question %{index} out of %{q_count}"
       next: "next"
     result:
       header: "test was completed"
-      correct: "Questions answered correctly"
-      outof: "out of"
+      correct: "Questions answered correctly: %{q_correct} out of %{q_number}, %{percent} %"
       success: "You have passed the test"
       failure: "Test failed"
     test_passage:

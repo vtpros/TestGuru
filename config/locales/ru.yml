@@ -19,9 +19,8 @@ ru:
 
     panel: "Панель администратора TestGuru"
     home: "Главная"
-    welcome: "Добро пожаловать"
-    hello: "Привет"
-    guru: "Гуру"
+    welcome: "Добро пожаловать, гуру %{name}"
+    hello: "Привет, %{name}!"
     logout: "Выйти"
     project: "Учебный проект"
     school_html: "в онлайн школе <a href='http://thinknetica.com/'>Thinknetica</a>"
@@ -44,9 +43,9 @@ ru:
         success: "Тест успешно обновлен"
       index:
         header: "Доступные тесты"
-        new_test: "Новый тест"
+        new_test: &new_test "Новый тест"
       new:
-        header: "Новый тест"
+        header: *new_test
       edit:
         header: "Редактировать тест"
       show:
@@ -65,10 +64,19 @@ ru:
       test_completeness:
         not_completed: 'Выбранный тест не завершён'
     questions:
+      create:
+        success: "Вопрос успешно создан"
+      update:
+        success: "Вопрос успешно обновлён"
       show:
-        new: 'Новый вопрос'
+        new_answer: 'Новый ответ'
       question:
         text: "Текст вопроса:"
+    answers:
+      create:
+        success: "Ответ успешно создан"
+      update:
+        success: "Ответ успешно обновлён"
   categories:
     Spanish: "Испанский"
     Portuguese: "Португальский"
@@ -82,12 +90,11 @@ ru:
     index:
       header: "Прохожения тестов"
     show:
-      outof: "из"
+      question: "Вопрос %{index} из %{q_count}"
       next: "Следующий"
     result:
       header: "тест был завершен"
-      correct: "Правильных ответов на вопросы"
-      outof: "из"
+      correct: "Правильных ответов на вопросы: %{q_correct} из %{q_number}, %{percent} %"
       success: "Тест успешно пройден"
       failure: "Тест не пройден"
     test_passage:

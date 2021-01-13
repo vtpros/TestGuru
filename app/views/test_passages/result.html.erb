@@ -1,7 +1,8 @@
 <h1>"<%= @test_passage.test.title %>" <%= t('.header') %></h1>
 <p>
-  <%= t('.correct') %>: <%= @test_passage.correct_questions %> <%= t('.outof') %>
-  <%= @test_passage.test.questions.count %>, <%= @test_passage.result %> %<br>
+  <%= t('.correct', q_correct: @test_passage.correct_questions,
+                    q_number: @test_passage.test.questions.count,
+                    percent: @test_passage.result) %><br>
   <% if @test_passage.success? %>
     <p class='success'><%= t('.success') %>.</p>
   <% else %>

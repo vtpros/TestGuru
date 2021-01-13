@@ -1,7 +1,8 @@
 <h1>"<%= t('app.test') %><%= @test_passage.test.title %>"</h1><br>
 
-<p><%= t('app.question') %>: <%= @test_passage.current_question_index %>
-<%= t('.outof') %> <%= @test_passage.test.questions.count %></p>
+<p><%= t('.question', index: @test_passage.current_question_index,
+                      q_count: @test_passage.test.questions.count) %>
+</p>
 
 <h2><%= @test_passage.current_question.body %></h2><br>
 
