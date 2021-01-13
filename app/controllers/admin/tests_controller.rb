@@ -17,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new(test_params)
     @test.author = current_user
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test)
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :edit
     end
@@ -53,8 +53,9 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_completeness
-    return unless @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
+    return unless @test.questions.blank? ||
+                  @test.questions.any? { |q| q.answers.blank? }
 
-    redirect_to @test, alert: 'Selected test has not been completed'
+    redirect_to @test, alert: t('.not_completed')
   end
 end

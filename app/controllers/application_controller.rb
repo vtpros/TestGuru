@@ -1,7 +1,17 @@
 class ApplicationController < ActionController::Base
+  before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def default_url_options(options={})
+    { lang: (I18n.locale if I18n.locale != I18n.default_locale) }
+  end
+
   private
+
+  def set_locale
+    available = I18n.locale_available?(params[:lang])
+    I18n.locale = available ? params[:lang] : I18n.default_locale
+  end
 
   def configure_permitted_parameters
     permitted_list = %i[first_name last_name]
@@ -16,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   # custom flash notice on devise sign_in
   def sign_in(resource_or_scope, *args)
-    flash[:notice] = "Hello, #{current_user.first_name}!"
+    flash[:notice] = t('app.hello', name: current_user.first_name)
     super
   end
 end

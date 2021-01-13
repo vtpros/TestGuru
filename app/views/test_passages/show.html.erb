@@ -1,7 +1,8 @@
-<h1>"<%= @test_passage.test.title %>" Test</h1><br>
+<h1>"<%= t('app.test') %><%= @test_passage.test.title %>"</h1><br>
 
-<p>Question <%= @test_passage.current_question_index %>
-out of <%= @test_passage.test.questions.count %></p>
+<p><%= t('.question', index: @test_passage.current_question_index,
+                      q_count: @test_passage.test.questions.count) %>
+</p>
 
 <h2><%= @test_passage.current_question.body %></h2><br>
 
@@ -14,6 +15,6 @@ out of <%= @test_passage.test.questions.count %></p>
     </p>
   <% end %>
 
-  <p><%= f.submit 'Next' %></p>
+  <p><%= f.submit t('.next') %></p>
 
 <% end %>

@@ -1,10 +1,11 @@
-<h1>The "<%= @test_passage.test.title %>" Test was completed</h1>
+<h1>"<%= @test_passage.test.title %>" <%= t('.header') %></h1>
 <p>
-  Questions answered correctly: <%= @test_passage.correct_questions %> out of
-  <%= @test_passage.test.questions.count %>, <%= @test_passage.result %> %<br>
+  <%= t('.correct', q_correct: @test_passage.correct_questions,
+                    q_number: @test_passage.test.questions.count,
+                    percent: @test_passage.result) %><br>
   <% if @test_passage.success? %>
-    <p class='success'>You have passed the test.</p>
+    <p class='success'><%= t('.success') %>.</p>
   <% else %>
-    <p class='failure'>Test failed.</p>
+    <p class='failure'><%= t('.failure') %>.</p>
   <% end %>
 </p>

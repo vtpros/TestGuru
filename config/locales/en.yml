@@ -30,4 +30,109 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    test: "Test"
+    tests: "Tests"
+    question: "Question"
+    questions: "Questions"
+    answer: 'Answer'
+    answers: 'Answers'
+    test_passages: "TestPassages"
+    title: "Title"
+    level: "Level"
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    sure?: "Are you sure?"
+    back: "Back"
+    actions: "Actions"
+    start: "Start"
+
+    panel: "TestGuru Admin Panel"
+    home: "Home"
+    tests: "Tests"
+    welcome: "Welcome, %{name} Guru"
+    hello: "Hello, %{name}!"
+    logout: "Logout"
+    project: "Study project"
+    school_html: "in <a href='http://thinknetica.com/'>Thinknetica</a> online school"
+    unauthorized: "You are not authorized to view this page"
+  helpers:
+    select:
+      prompts:
+        Spanish: "Spanish"
+        Portuguese: "Portuguese"
+        French: "French"
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      update:
+        success: "Test was successfully updated"
+      index:
+        header: "Tricky tests"
+        new_test: &new_test "New test"
+      new:
+        header: *new_test
+      edit:
+        header: "Edit test"
+      show:
+        header: "Test"
+        start: "Start"
+        questions:
+          zero: "questions"
+          one: "question"
+          other: "questions"
+        add: "Add a question"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      test_completeness:
+        not_completed: "Selected test has not been completed"
+    questions:
+      create:
+        success: "Question was successfully created"
+      update:
+        success: "Question was successfully updated"
+      show:
+        new_answer: 'New answer'
+      question:
+        text: "Question text:"
+    answers:
+      create:
+        success: "Answer was successfully created"
+      update:
+        success: "Answer was successfully updated"
+  categories:
+    Spanish: "Spanish"
+    Portuguese: "Portuguese"
+    French: "French"
+  tests:
+    index:
+      header: "Tricky tests"
+    test_completeness:
+      not_completed: "Selected test has not been completed"
+  test_passages:
+    index:
+      header: "Test passages"
+    show:
+      question: "Question %{index} out of %{q_count}"
+      next: "next"
+    result:
+      header: "test was completed"
+      correct: "Questions answered correctly: %{q_correct} out of %{q_number}, %{percent} %"
+      success: "You have passed the test"
+      failure: "Test failed"
+    test_passage:
+      completed: "test completed"
+      continue: "continue test"

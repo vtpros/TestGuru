@@ -2,16 +2,16 @@
   <%= render 'shared/errors/errors_list', resource: @test %>
 
   <p>
-    <%= f.label :title, 'Title' %><br>
+    <%= f.label :title %><br>
     <%= f.text_field :title, id: :test_title %><br>
   </p>
   <p>
-    <%= f.label :level, 'Level' %><br>
+    <%= f.label :level %><br>
     <%= f.number_field :level, id: :test_level %><br>
   </p>
   <p>
-    <%= f.label :category_id, 'Category' %><br>
-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %><br>
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :i18n_name, prompt: true %><br>
   </p>
 
   <p><%= f.submit %></p>
