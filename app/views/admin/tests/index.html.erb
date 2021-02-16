@@ -4,13 +4,13 @@
   <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="table-primary">
     <tr>
-      <th><%= t('app.title') %></th>
-      <th><%= t('app.level') %></th>
-      <th><%= t('app.questions') %></th>
-      <th colspan='3'><%= t('app.actions') %>:</th>
+      <th scope="col"><%= t('app.title') %></th>
+      <th scope="col"><%= t('app.level') %></th>
+      <th scope="col"><%= t('app.questions') %></th>
+      <th  scope="col" colspan='3'><%= t('app.actions') %>:</th>
     </tr>
   </thead>
   <tbody>

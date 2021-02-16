@@ -4,8 +4,8 @@ ru:
     tests: "Тесты"
     question: "Вопрос"
     questions: "Вопросы"
-    answer: 'Ответ'
-    answers: 'Ответы'
+    answer: "Ответ"
+    answers: "Ответы"
     test_passages: "Прохождения тестов"
     title: "Название"
     level: "Уровень"
@@ -30,6 +30,11 @@ ru:
     enter: "Войти"
     enter_gate: "Войдите в гуру-врата"
     email: "Введите email"
+    devise:
+      forgot: "Забыли ваш пароль?"
+      no_confirmation: "Не получили инструкции для подтверждения?"
+      no_instructions: "Не получили инструкции для разблокировки?"
+      signin_provider: "Войдите с помощью %{provider}"
   helpers:
     submit:
       test:
@@ -89,7 +94,7 @@ ru:
   tests:
     index:
       header: 'Доступные тесты'
-    test_completeness:
+    start:
       not_completed: 'Выбранный тест не завершён'
   test_passages:
     index:

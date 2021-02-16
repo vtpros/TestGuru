@@ -35,8 +35,8 @@ en:
     tests: "Tests"
     question: "Question"
     questions: "Questions"
-    answer: 'Answer'
-    answers: 'Answers'
+    answer: "Answer"
+    answers: "Answers"
     test_passages: "TestPassages"
     title: "Title"
     level: "Level"
@@ -62,6 +62,11 @@ en:
     enter: "Enter"
     enter_gate: "Enter the guru gates"
     email: "Enter email"
+    devise:
+      forgot: "Forgot your password?"
+      no_confirmation: "Didn't receive confirmation instructions?"
+      no_instructions: "Didn't receive unlock instructions?"
+      signin_provider: "Sign in with %{provider}"
   helpers:
     select:
       prompts:
@@ -125,7 +130,7 @@ en:
   tests:
     index:
       header: "Tricky tests"
-    test_completeness:
+    start:
       not_completed: "Selected test has not been completed"
   test_passages:
     index:

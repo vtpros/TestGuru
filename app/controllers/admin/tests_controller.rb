@@ -17,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new(test_params)
     @test.author = current_user
     if @test.save
-      redirect_to [:admin, @test], notice: t('.success')
+      redirect_to [:admin, @test], success: t('.success')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: t('.success')
+      redirect_to [:admin, @test], success: t('.success')
     else
       render :edit
     end
@@ -50,12 +50,5 @@ class Admin::TestsController < Admin::BaseController
 
   def rescue_with_test_not_found
     render 'shared/errors/record_not_found', status: :not_found
-  end
-
-  def test_completeness
-    return unless @test.questions.blank? ||
-                  @test.questions.any? { |q| q.answers.blank? }
-
-    redirect_to @test, alert: t('.not_completed')
   end
 end

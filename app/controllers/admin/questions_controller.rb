@@ -13,7 +13,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to admin_question_path(@question), notice: t('.success')
+      redirect_to admin_question_path(@question), success: t('.success')
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_question_path(@question), notice: t('.success')
+      redirect_to admin_question_path(@question), success: t('.success')
     else
       @test = @question.test
       render :edit
