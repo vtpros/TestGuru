@@ -28,6 +28,6 @@ class TestsController < ApplicationController
   def test_completeness
     return unless @test.questions.blank? || @test.questions.any? { |q| q.answers.blank? }
 
-    redirect_to tests_path, alert: t('.not_completed')
+    redirect_to tests_path, danger: t('.not_completed')
   end
 end

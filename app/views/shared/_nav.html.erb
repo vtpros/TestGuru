@@ -1,3 +1,10 @@
-<%= link_to t('app.home'), root_path %>
-<%= link_to t('app.tests'), tests_path %>
-<%= link_to t('app.test_passages'), test_passages_path %>
+<nav class="navbar navbar-light bg-ligth">
+  <%= link_to t('app.testguru'), root_path, class: 'navbar-brand' %>
+  <% if current_user&.is_a?(Admin) %>
+    <%= link_to t('app.panel'), admin_tests_path %>
+  <% end %>
+
+  <span class="navbar-text">
+    <%= render 'shared/welcome' %>
+  </span>
+</nav>

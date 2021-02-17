@@ -7,7 +7,7 @@ module ApplicationHelper
     link_to options[:text], "https://github.com/#{options[:author]}/#{options[:repo]}/"
   end
 
-  def flash_msg(type)
-    tag.p flash[type], class: "flash #{type}" if flash[type]
+  def flash_msg(type, message)
+    tag.p message, class: "alert alert-#{type}"
   end
 end

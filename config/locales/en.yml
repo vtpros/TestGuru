@@ -35,8 +35,8 @@ en:
     tests: "Tests"
     question: "Question"
     questions: "Questions"
-    answer: 'Answer'
-    answers: 'Answers'
+    answer: "Answer"
+    answers: "Answers"
     test_passages: "TestPassages"
     title: "Title"
     level: "Level"
@@ -49,7 +49,9 @@ en:
     start: "Start"
 
     panel: "TestGuru Admin Panel"
-    home: "Home"
+    login: "Log in"
+    signup: "Signup"
+    testguru: "TestGuru"
     tests: "Tests"
     welcome: "Welcome, %{name} Guru"
     hello: "Hello, %{name}!"
@@ -57,6 +59,14 @@ en:
     project: "Study project"
     school_html: "in <a href='http://thinknetica.com/'>Thinknetica</a> online school"
     unauthorized: "You are not authorized to view this page"
+    enter: "Enter"
+    enter_gate: "Enter the guru gates"
+    email: "Enter email"
+    devise:
+      forgot: "Forgot your password?"
+      no_confirmation: "Didn't receive confirmation instructions?"
+      no_instructions: "Didn't receive unlock instructions?"
+      signin_provider: "Sign in with %{provider}"
   helpers:
     select:
       prompts:
@@ -120,7 +130,7 @@ en:
   tests:
     index:
       header: "Tricky tests"
-    test_completeness:
+    start:
       not_completed: "Selected test has not been completed"
   test_passages:
     index:
