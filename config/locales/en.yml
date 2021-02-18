@@ -62,6 +62,7 @@ en:
     enter: "Enter"
     enter_gate: "Enter the guru gates"
     email: "Enter email"
+    gist_question: "A question about %{title} from TestGuru"
     devise:
       forgot: "Forgot your password?"
       no_confirmation: "Didn't receive confirmation instructions?"
@@ -138,6 +139,7 @@ en:
     show:
       question: "Question %{index} out of %{q_count}"
       next: "next"
+      save_gist: "Save the question to a gist"
     result:
       header: "test was completed"
       correct: "Questions answered correctly: %{q_correct} out of %{q_number}, %{percent} %"
@@ -146,3 +148,6 @@ en:
     test_passage:
       completed: "test completed"
       continue: "continue test"
+    gist:
+      success: "Gist successfully created: %{url}"
+      failure: "Failed to create gist"

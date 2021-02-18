@@ -15,6 +15,9 @@
     </p>
   <% end %>
 
+  <p><%= link_to t('.save_gist'),
+                 gist_test_passage_path(@test_passage),
+                 method: :post %></p>
   <p><%= f.submit t('.next') %></p>
 
 <% end %>

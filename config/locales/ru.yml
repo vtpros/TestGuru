@@ -30,6 +30,7 @@ ru:
     enter: "Войти"
     enter_gate: "Войдите в гуру-врата"
     email: "Введите email"
+    gist_question: "Вопрос о %{title} из TestGuru"
     devise:
       forgot: "Забыли ваш пароль?"
       no_confirmation: "Не получили инструкции для подтверждения?"
@@ -102,6 +103,7 @@ ru:
     show:
       question: "Вопрос %{index} из %{q_count}"
       next: "Следующий"
+      save_gist: "Сохранить вопрос в gist"
     result:
       header: "тест был завершен"
       correct: "Правильных ответов на вопросы: %{q_correct} из %{q_number}, %{percent} %"
@@ -110,3 +112,6 @@ ru:
     test_passage:
       completed: "тест завершен"
       continue: "продолжить прохождение"
+    gist:
+      success: "Gist успешно создан: %{url}"
+      failure: "Не удалось создать gist"
