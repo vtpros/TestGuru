@@ -1,16 +1,14 @@
-class GitHubClient  
-  ACCESS_TOKEN = 'secret'
+class GitHubClient
+  ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
   def initialize
     @github_client = setup_github_client
   end
 
   def create_gist(params)
-    begin
-      @gist = client.create_gist(params)
-      self
+    @gist = @github_client.create_gist(params)
+    self
     rescue
-    end
   end
 
   def gist_url
