@@ -38,6 +38,7 @@ en:
     answer: "Answer"
     answers: "Answers"
     test_passages: "TestPassages"
+    gists: "Gists"
     title: "Title"
     level: "Level"
     show: "Show"
@@ -151,3 +152,8 @@ en:
     gist:
       success: "Gist successfully created: %{url}"
       failure: "Failed to create gist"
+  gists:
+    gists: "Gists"
+    question: 'Question'
+    url: 'Link'
+    guru: 'Guru'

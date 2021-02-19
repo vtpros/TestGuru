@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
 gem 'faraday'
-gem "octokit", "~> 4.0"
+gem 'octokit', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

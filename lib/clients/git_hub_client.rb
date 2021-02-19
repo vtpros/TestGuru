@@ -8,11 +8,12 @@ class GitHubClient
   def create_gist(params)
     @gist = @github_client.create_gist(params)
     self
-    rescue
+  rescue Octokit::Unauthorized
+    nil
   end
 
   def gist_url
-    @gist.html_url if @gist
+    @gist&.html_url
   end
 
   private

@@ -4,6 +4,7 @@ class User < ApplicationRecord
                            inverse_of: :author
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
+  has_many :gists, dependent: :destroy
 
   validates :first_name, :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },

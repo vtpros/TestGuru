@@ -24,12 +24,13 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    service = GistQuestionService.new(@test_passage.current_question).call
-    flash_options = if service
-      { success: t('.success', url: service.gist_url) }
-    else
-      { danger: t('.failure') }
-    end
+    gist = GistQuestionService.new(@test_passage.current_question, current_user).call
+    gist&.save
+    flash_options = if gist
+                      { success: t('.success', url: gist.url) }
+                    else
+                      { danger: t('.failure') }
+                    end
     redirect_to @test_passage, flash_options
   end
 
