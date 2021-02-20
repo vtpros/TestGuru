@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :gists, only: %i[index]
+    resources :gists, only: :index do
+      delete :destroy, on: :member
+    end
 
     resources :tests do
       resources :questions, shallow: true, except: :index do

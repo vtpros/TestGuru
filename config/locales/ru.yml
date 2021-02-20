@@ -48,6 +48,13 @@ ru:
         level: "Уровень"
         category_id: "Категория"
   admin:
+    gists:
+      index:
+        gists: "Gists"
+        question: 'Вопрос'
+        url: 'Ссылка'
+        actions: 'Действия'
+        guru: 'Гуру'
     tests:
       create:
         success: "Тест успешно создан"
@@ -116,8 +123,3 @@ ru:
     gist:
       success_html: "Gist успешно создан: %{link}"
       failure: "Не удалось создать gist"
-  gists:
-    gists: "Gists"
-    question: 'Вопрос'
-    url: 'Ссылка'
-    guru: 'Гуру'

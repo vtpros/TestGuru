@@ -43,6 +43,6 @@ class TestPassagesController < ApplicationController
 
   def gist_link(url)
     gist_hash = url[url.rindex('/') + 1..-1]
-    link = view_context.link_to gist_hash, url
+    view_context.link_to gist_hash, url
   end
 end

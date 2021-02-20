@@ -38,6 +38,6 @@ class GistQuestionService
 
   def new_gist
     gist_params = { url: gist_url, question: @question, user: @user }
-    gist = Gist.new(gist_params)
+    Gist.new(gist_params)
   end
 end

@@ -1,5 +1,11 @@
 <tr>
   <td><%= link_to gist.question.body.truncate(25), admin_question_path(gist.question) %></td>
   <td><%= link_to nil, gist.url %></td>
+  <td>
+    <%= link_to t('app.delete'),
+                admin_gist_path(gist),
+                method: :delete,
+                data: { confirm: t('app.sure?') } %>
+  </td>
   <td><%= gist.user.email %></td>
 </tr>
