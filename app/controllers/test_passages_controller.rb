@@ -24,10 +24,10 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    gist = GistQuestionService.new(@test_passage.current_question, current_user).call
-    gist&.save
-    flash_options = if gist
-                      { success: t('.success', url: gist.url) }
+    new_gist = GistQuestionService.new(@test_passage.current_question, current_user).call
+    new_gist&.save
+    flash_options = if new_gist
+                      { success: t('.success', url: new_gist.url) }
                     else
                       { danger: t('.failure') }
                     end
