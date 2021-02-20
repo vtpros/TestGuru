@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.7'
 # Authentication
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
-gem 'faraday'
 gem 'octokit', '~> 4.0'
 
 # Use Active Storage variant

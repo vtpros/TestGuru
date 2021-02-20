@@ -1,6 +1,4 @@
 <%= form_with model: @user, local: true do |f| %>
-  <%= flash_msg(:alert) %>
-
   <p>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name, id: :user_name %>

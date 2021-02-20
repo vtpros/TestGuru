@@ -259,7 +259,6 @@ DEPENDENCIES
   devise (~> 4.0)
   devise-i18n
   dotenv-rails
-  faraday
   jbuilder (~> 2.7)
   listen (~> 3.2)
   octokit (~> 4.0)

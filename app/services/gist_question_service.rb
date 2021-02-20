@@ -6,11 +6,11 @@ class GistQuestionService
     @client = client || GitHubClient.new
   end
 
-  def call
+  def create_gist
     result = @client.create_gist(gist_params)
     return nil unless result
 
-    create_gist
+    new_gist
   end
 
   def gist_url
@@ -36,8 +36,8 @@ class GistQuestionService
     content.join("\n")
   end
 
-  def create_gist
+  def new_gist
     gist_params = { url: gist_url, question: @question, user: @user }
-    Gist.new(gist_params)
+    gist = Gist.new(gist_params)
   end
 end

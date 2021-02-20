@@ -150,7 +150,7 @@ en:
       completed: "test completed"
       continue: "continue test"
     gist:
-      success: "Gist successfully created: %{url}"
+      success: "Gist successfully created: %{link}"
       failure: "Failed to create gist"
   gists:
     gists: "Gists"

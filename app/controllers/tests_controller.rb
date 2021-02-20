@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :_test, only: :start
+  before_action :test, only: :start
   before_action :test_completeness, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -21,7 +21,7 @@ class TestsController < ApplicationController
     render 'shared/errors/record_not_found', status: :not_found
   end
 
-  def _test
+  def test
     @test ||= Test.find(params[:id])
   end
 

@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :_test_passage, only: %i[show update result gist]
+  before_action :test_passage, only: %i[show update result gist]
 
   def index
     @test_passages = TestPassage.by_user(current_user)
@@ -24,10 +24,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    new_gist = GistQuestionService.new(@test_passage.current_question, current_user).call
+    question = @test_passage.current_question
+    new_gist = GistQuestionService.new(question, current_user).create_gist
     new_gist&.save
     flash_options = if new_gist
-                      { success: t('.success', url: new_gist.url) }
+                      { success: t('.success_html', link: gist_link(new_gist.url)) }
                     else
                       { danger: t('.failure') }
                     end
@@ -36,7 +37,12 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def _test_passage
+  def test_passage
     @test_passage ||= TestPassage.find(params[:id])
+  end
+
+  def gist_link(url)
+    gist_hash = url[url.rindex('/') + 1..-1]
+    link = view_context.link_to gist_hash, url
   end
 end

@@ -114,7 +114,7 @@ ru:
       completed: "тест завершен"
       continue: "продолжить прохождение"
     gist:
-      success: "Gist успешно создан: %{url}"
+      success_html: "Gist успешно создан: %{link}"
       failure: "Не удалось создать gist"
   gists:
     gists: "Gists"

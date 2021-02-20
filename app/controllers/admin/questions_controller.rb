@@ -1,6 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :_test, only: %i[create new]
-  before_action :_question, only: %i[show edit update destroy]
+  before_action :test, only: %i[create new]
+  before_action :question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -39,11 +39,11 @@ class Admin::QuestionsController < Admin::BaseController
 
   private
 
-  def _test
+  def test
     @test ||= Test.find(params[:test_id])
   end
 
-  def _question
+  def question
     @question ||= Question.find(params[:id])
   end
 
