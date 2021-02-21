@@ -9,14 +9,11 @@ Rails.application.routes.draw do
   end
 
   resources :test_passages, only: %i[index show update] do
-    member do
-      get :result
-      post :gist
-    end
+    get :result, on: :member
   end
 
   namespace :admin do
-    resources :gists, only: :index do
+    resources :gists, only: %i[index create] do
       delete :destroy, on: :member
     end
 

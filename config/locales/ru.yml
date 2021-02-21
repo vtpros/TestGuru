@@ -55,6 +55,9 @@ ru:
         url: 'Ссылка'
         actions: 'Действия'
         guru: 'Гуру'
+      create:
+        success_html: "Gist успешно создан: %{link}"
+        failure: "Не удалось создать gist"
     tests:
       create:
         success: "Тест успешно создан"
@@ -120,6 +123,3 @@ ru:
     test_passage:
       completed: "тест завершен"
       continue: "продолжить прохождение"
-    gist:
-      success_html: "Gist успешно создан: %{link}"
-      failure: "Не удалось создать gist"

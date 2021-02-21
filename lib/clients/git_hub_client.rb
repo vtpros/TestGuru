@@ -5,15 +5,19 @@ class GitHubClient
     @github_client = setup_github_client
   end
 
-  def create_gist(params)
-    @gist = @github_client.create_gist(params)
+  def build_gist(params)
+    @raw_gist = @github_client.create_gist(params)
     self
   rescue Octokit::Unauthorized
     nil
   end
 
+  def gist_hash
+    @raw_gist&.id
+  end
+
   def gist_url
-    @gist&.html_url
+    @raw_gist&.html_url
   end
 
   private

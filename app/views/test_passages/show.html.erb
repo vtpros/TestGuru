@@ -15,9 +15,10 @@
     </p>
   <% end %>
 
-  <p><%= link_to t('.save_gist'),
-                 gist_test_passage_path(@test_passage),
-                 method: :post %></p>
   <p><%= f.submit t('.next') %></p>
+<% end %>
 
+<%= form_with url: admin_gists_path, local: true, method: :post do |form| %>
+  <%= hidden_field(:test_passage, :id, value: @test_passage.id) %>
+  <%= form.submit t('.save_gist'), class: "btn btn-link" %>
 <% end %>

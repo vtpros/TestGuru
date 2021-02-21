@@ -6,8 +6,8 @@ class GistQuestionService
     @client = client || GitHubClient.new
   end
 
-  def create_gist
-    result = @client.create_gist(gist_params)
+  def build_gist
+    result = @client.build_gist(gist_params)
     return nil unless result
 
     new_gist
@@ -15,6 +15,10 @@ class GistQuestionService
 
   def gist_url
     @client.gist_url
+  end
+
+  def gist_hash
+    @client.gist_hash
   end
 
   private
@@ -37,7 +41,11 @@ class GistQuestionService
   end
 
   def new_gist
-    gist_params = { url: gist_url, question: @question, user: @user }
+    gist_params = { url: gist_url, gist_hash: gist_hash, question: @question, user: @user }
     Gist.new(gist_params)
+  end
+
+  def new_gist_params
+    { url: gist_url, gist_hash: gist_hash, question: @question, user: @user }
   end
 end

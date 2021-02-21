@@ -92,6 +92,9 @@ en:
         url: 'Link'
         actions: 'Actions'
         guru: 'Guru'
+      create:
+        success: "Gist successfully created: %{link}"
+        failure: "Failed to create gist"
     tests:
       create:
         success: "Test was successfully created"
@@ -156,6 +159,3 @@ en:
     test_passage:
       completed: "test completed"
       continue: "continue test"
-    gist:
-      success: "Gist successfully created: %{link}"
-      failure: "Failed to create gist"
