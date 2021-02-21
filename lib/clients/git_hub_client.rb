@@ -1,5 +1,5 @@
 class GitHubClient
-  ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
+  ACCESS_TOKEN = ENV.fetch('GITHUB_ACCESS_TOKEN')
 
   def initialize
     @github_client = setup_github_client
@@ -7,9 +7,14 @@ class GitHubClient
 
   def build_gist(params)
     @raw_gist = @github_client.create_gist(params)
+    @response = @github_client.last_response.status
     self
-  rescue Octokit::Unauthorized
+  rescue => e
     nil
+  end
+
+  def success?
+    @response == 201
   end
 
   def gist_hash

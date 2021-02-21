@@ -7,10 +7,8 @@ class GistQuestionService
   end
 
   def build_gist
-    result = @client.build_gist(gist_params)
-    return nil unless result
-
-    new_gist
+    @client.build_gist(gist_params)
+    new_gist if @client.success?
   end
 
   def gist_url
@@ -43,9 +41,5 @@ class GistQuestionService
   def new_gist
     gist_params = { url: gist_url, gist_hash: gist_hash, question: @question, user: @user }
     Gist.new(gist_params)
-  end
-
-  def new_gist_params
-    { url: gist_url, gist_hash: gist_hash, question: @question, user: @user }
   end
 end
