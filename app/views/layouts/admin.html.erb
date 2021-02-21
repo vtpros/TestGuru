@@ -16,9 +16,9 @@
     <div class="container">
       <%= render 'admin/nav' %>
 
-      <%= link_to t('app.tests'), tests_path %>
-      <%= link_to t('app.test_passages'), test_passages_path %>
-      
+      <%= render 'admin/nav_menu' %>
+
+
       <%= render 'shared/flash' %>
 
       <%= yield %>

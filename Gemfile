@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Authentication
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
+gem 'octokit', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -34,6 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -45,8 +47,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
-
-  # gem 'letter_opener'
+  gem 'letter_opener'
 end
 
 group :test do

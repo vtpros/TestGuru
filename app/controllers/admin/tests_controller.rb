@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :_test, only: %i[show edit update destroy]
+  before_action :test, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -40,7 +40,7 @@ class Admin::TestsController < Admin::BaseController
 
   private
 
-  def _test
+  def test
     @test ||= Test.find(params[:id])
   end
 

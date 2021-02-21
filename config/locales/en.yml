@@ -38,6 +38,7 @@ en:
     answer: "Answer"
     answers: "Answers"
     test_passages: "TestPassages"
+    gists: "Gists"
     title: "Title"
     level: "Level"
     show: "Show"
@@ -62,6 +63,7 @@ en:
     enter: "Enter"
     enter_gate: "Enter the guru gates"
     email: "Enter email"
+    gist_question: "A question about %{title} from TestGuru"
     devise:
       forgot: "Forgot your password?"
       no_confirmation: "Didn't receive confirmation instructions?"
@@ -83,6 +85,16 @@ en:
         level: "Level"
         category_id: "Category"
   admin:
+    gists:
+      index:
+        gists: "Gists"
+        question: 'Question'
+        url: 'Link'
+        actions: 'Actions'
+        guru: 'Guru'
+      create:
+        success: "Gist successfully created: %{link}"
+        failure: "Failed to create gist"
     tests:
       create:
         success: "Test was successfully created"
@@ -138,6 +150,7 @@ en:
     show:
       question: "Question %{index} out of %{q_count}"
       next: "next"
+      save_gist: "Save the question to a gist"
     result:
       header: "test was completed"
       correct: "Questions answered correctly: %{q_correct} out of %{q_number}, %{percent} %"

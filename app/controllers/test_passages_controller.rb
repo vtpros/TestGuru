@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :_test_passage, only: %i[show update result]
+  before_action :test_passage, only: %i[show update result]
 
   def index
     @test_passages = TestPassage.by_user(current_user)
@@ -25,7 +25,7 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def _test_passage
+  def test_passage
     @test_passage ||= TestPassage.find(params[:id])
   end
 end

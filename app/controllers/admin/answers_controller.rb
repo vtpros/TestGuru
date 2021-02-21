@@ -1,6 +1,6 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :_question, only: %i[new create]
-  before_action :_answer, only: %i[show edit update destroy]
+  before_action :question, only: %i[new create]
+  before_action :answer, only: %i[show edit update destroy]
 
   def show; end
 
@@ -35,11 +35,11 @@ class Admin::AnswersController < Admin::BaseController
 
   private
 
-  def _question
+  def question
     @question ||= Question.find(params[:question_id])
   end
 
-  def _answer
+  def answer
     @answer ||= Answer.find(params[:id])
   end
 

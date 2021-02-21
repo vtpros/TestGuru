@@ -1,0 +1,15 @@
+<h2><%= t('.gists') %></h2>
+
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col"><%= t('.question') %></th>
+      <th scope="col"><%= t('.url') %></th>
+      <th scope="col"><%= t('.actions') %></th>
+      <th scope="col"><%= t('.guru') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>
