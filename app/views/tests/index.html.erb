@@ -3,7 +3,11 @@
 <table class="table">
   <thead>
     <tr  class="table-primary">
-      <th scope="col"><%= t('app.title') %></th>
+      <th scope="col" class="sort-by-title pointer">
+        <%= t('app.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th scope="col"><%= t('app.level') %></th>
       <th scope="col"><%= t('app.questions') %></th>
       <th scope="col"><%= t('app.actions') %>:</th>
