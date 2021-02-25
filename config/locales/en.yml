@@ -71,6 +71,7 @@ en:
       no_confirmation: "Didn't receive confirmation instructions?"
       no_instructions: "Didn't receive unlock instructions?"
       signin_provider: "Sign in with %{provider}"
+      chars_min: "Characters minimum:  %{chars}"
   helpers:
     select:
       prompts:

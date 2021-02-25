@@ -39,6 +39,7 @@ ru:
       no_confirmation: "Не получили инструкции для подтверждения?"
       no_instructions: "Не получили инструкции для разблокировки?"
       signin_provider: "Войдите с помощью %{provider}"
+      chars_min: "Минимально символов: %{chars}"
   helpers:
     submit:
       test:
