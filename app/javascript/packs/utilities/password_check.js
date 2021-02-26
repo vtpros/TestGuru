@@ -1,39 +1,37 @@
-let password1
-let password2 = ''
-let icon_check
-let icon_x
+class PasswordConfirmation {
+  constructor(form) {
+    this.form             = form
+    this.password         = form.elements.user_password
+    this.password_confirm = form.elements.user_password_confirmation
+    this.icon_check_list  = form.querySelector('.octicon-check-circle').classList
+    this.icon_x_list      = form.querySelector('.octicon-x-circle').classList
 
-document.addEventListener('turbolinks:load', function() {
-  icon_check = document.querySelector('.octicon-check-circle')
-  icon_x = document.querySelector('.octicon-x-circle')
+    this.setup()
+  }
 
-  let pass1_field = document.querySelector('.password1')
-  if (pass1_field) { pass1_field.addEventListener('change', inputPassword1) }
+  resetStyleForInputs() {
+    this.icon_check_list.add('hide')
+    this.icon_x_list.add('hide')
+  }
 
-  let pass2_field = document.querySelector('.password2')
-  if (pass2_field) { pass2_field.addEventListener('change', inputPassword2) }
+  checkPasswords() {
+    this.resetStyleForInputs()
+    if(this.password_confirm.value === this.password.value) {
+      this.icon_check_list.remove('hide')
+    } else {
+      this.icon_x_list.remove('hide')
+    }
+  }
 
-})
-
-function inputPassword1(){
-  password1 = this.value
-  passwordCheck()
-}
-
-function inputPassword2(){
-  password2 = this.value
-  passwordCheck()
-}
-
-function passwordCheck(){
-  if (password2 == '') {
-    icon_x.classList.add('hide')
-    icon_check.classList.add('hide')
-  } else if (password1 == password2 ) {
-    icon_x.classList.add('hide')
-    icon_check.classList.remove('hide')
-  } else {
-    icon_check.classList.add('hide')
-    icon_x.classList.remove('hide')
+  setup() {
+    this.form.addEventListener('keyup', event => {
+      if (this.password_confirm.value != '') this.checkPasswords()
+      else this.resetStyleForInputs()
+    })
   }
 }
+
+document.addEventListener('turbolinks:load', function() {
+  const reg_form = document.getElementById('new_user')
+  if (reg_form) new PasswordConfirmation(reg_form)
+})
