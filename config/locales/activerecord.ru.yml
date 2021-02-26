@@ -5,7 +5,10 @@ ru:
       Question: "Вопрс"
       Answer: "Ответ"
       TestPassage: "Прохождение теста"
-
+    attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
 
     date:
       abbr_day_names:

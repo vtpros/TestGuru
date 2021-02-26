@@ -61,7 +61,9 @@ en:
     school_html: "in <a href='http://thinknetica.com/'>Thinknetica</a> online school"
     unauthorized: "You are not authorized to view this page"
     enter: "Enter"
+    sign_up: "Sign up"
     enter_gate: "Enter the guru gates"
+    become_guru: "Become a guru"
     email: "Enter email"
     gist_question: "A question about %{title} from TestGuru"
     devise:
@@ -69,6 +71,7 @@ en:
       no_confirmation: "Didn't receive confirmation instructions?"
       no_instructions: "Didn't receive unlock instructions?"
       signin_provider: "Sign in with %{provider}"
+      chars_min: "Characters minimum:  %{chars}"
   helpers:
     select:
       prompts:

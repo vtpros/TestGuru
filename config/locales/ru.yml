@@ -29,7 +29,9 @@ ru:
     school_html: "в онлайн школе <a href='http://thinknetica.com/'>Thinknetica</a>"
     unauthorized: "У вас нет прав для просмотра данной страницы"
     enter: "Войти"
+    sign_up: "Создать аккаунт"
     enter_gate: "Войдите в гуру-врата"
+    become_guru: "Станьте гуру"
     email: "Введите email"
     gist_question: "Вопрос о %{title} из TestGuru"
     devise:
@@ -37,6 +39,7 @@ ru:
       no_confirmation: "Не получили инструкции для подтверждения?"
       no_instructions: "Не получили инструкции для разблокировки?"
       signin_provider: "Войдите с помощью %{provider}"
+      chars_min: "Минимально символов: %{chars}"
   helpers:
     submit:
       test:

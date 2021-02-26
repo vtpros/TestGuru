@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 gem 'devise-i18n'
 gem 'octokit', '~> 4.0'
+gem 'octicons_helper'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
