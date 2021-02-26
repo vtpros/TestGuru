@@ -1,16 +1,16 @@
-var password1 = null
-var password2 = ''
-var icon_check = null
-var icon_x = null
+let password1
+let password2 = ''
+let icon_check
+let icon_x
 
 document.addEventListener('turbolinks:load', function() {
   icon_check = document.querySelector('.octicon-check-circle')
   icon_x = document.querySelector('.octicon-x-circle')
 
-  var pass1_field = document.querySelector('.password1')
+  let pass1_field = document.querySelector('.password1')
   if (pass1_field) { pass1_field.addEventListener('change', inputPassword1) }
 
-  var pass2_field = document.querySelector('.password2')
+  let pass2_field = document.querySelector('.password2')
   if (pass2_field) { pass2_field.addEventListener('change', inputPassword2) }
 
 })
