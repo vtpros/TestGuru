@@ -1,5 +1,7 @@
-<% if resource.errors.any? %>
-  <div class='error' id="error_explanation">    
+<% if resource.present? && resource.errors.any? %>
+  <%= tag.div class: 'error resource-errors',
+              id: "error_explanation",
+              data: { resource_id: resource.id } do %>
     <h2>
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
@@ -11,5 +13,5 @@
         <li><%= message %></li>
       <% end %>
     </ul>
-  </div>
+  <% end %>
 <% end %>

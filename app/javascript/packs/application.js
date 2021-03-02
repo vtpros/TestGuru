@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("packs/utilities/sorting")
 require("packs/utilities/password_check")
+require("packs/utilities/form_inline")
+require('jquery')
 import "bootstrap"
 
 // Uncomment to copy all static images under ../images to the output folder and reference

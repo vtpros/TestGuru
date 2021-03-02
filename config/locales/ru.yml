@@ -88,6 +88,8 @@ ru:
         delete: "Удалить"
       test_completeness:
         not_completed: 'Выбранный тест не завершён'
+      form_inline:
+        submit: 'Ок'
     questions:
       create:
         success: "Вопрос успешно создан"
