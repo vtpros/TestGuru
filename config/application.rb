@@ -18,6 +18,10 @@ module TestGuru
     config.time_zone = 'Moscow'
     config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :ru
+
+    # for use by I18n.js
+    config.middleware.use I18n::JS::Middleware
+
     config.autoload_paths << Rails.root.join('lib/clients')
   end
 end

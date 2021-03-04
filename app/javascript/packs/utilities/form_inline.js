@@ -13,11 +13,11 @@ function tdInlineHandler(testId) {
   if ($formInline.is(':visible')) {
     // testTitle.classList.add('hide')
     // formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
+    link.textContent = I18n.t('app.cancel') //'Cancel'
   } else {
     // testTitle.classList.remove('hide')
     // formInline.classList.add('hide')
-    link.textContent = 'Edit'
+    link.textContent = I18n.t('app.edit') //'Edit'
   }
 }
 
@@ -35,6 +35,7 @@ document.addEventListener('turbolinks:load', function() {
   //     controls[i].addEventListener('click', formInlineHandler)
   //   }
   // }
+  I18n.locale = $('body').data('locale')
 
   $('.form-inline-link').on('click', formInlineHandler)
 

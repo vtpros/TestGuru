@@ -54,6 +54,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # added for javascript_include_tag "i18n" to work
+  config.assets.check_precompiled_asset = false
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
