@@ -1,14 +1,14 @@
 document.addEventListener('turbolinks:load', function() {
-  let control = document.querySelector('.sort-by-title')
+  const control = document.querySelector('.sort-by-title')
 
   if (control) { control.addEventListener('click', sortRowsByTitle) }
 })
 
 function sortRowsByTitle() {
-  let table = document.querySelector('table')
-  let up_tag_list = this.querySelector('.octicon-arrow-up').classList
-  let down_tag_list = this.querySelector('.octicon-arrow-down').classList
-  let sortedRows = Array.from(table.rows).slice(1)
+  const table = document.querySelector('table')
+  const up_tag_list = this.querySelector('.octicon-arrow-up').classList
+  const down_tag_list = this.querySelector('.octicon-arrow-down').classList
+  const sortedRows = Array.from(table.rows).slice(1)
 
   if (up_tag_list.contains('hide')) {
     sortedRows.sort( (rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1 )

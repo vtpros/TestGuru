@@ -1,8 +1,8 @@
 function tdInlineHandler(testId) {
-  let data = `[data-test-id="${testId}"]`
-  let link = document.querySelector('.form-inline-link' + data)
-  let $testTitle = $('.test-title' + data)
-  let $formInline = $('.form-inline' + data)
+  const data = `[data-test-id="${testId}"]`
+  const link = document.querySelector('.form-inline-link' + data)
+  const $testTitle = $('.test-title' + data)
+  const $formInline = $('.form-inline' + data)
 
   $testTitle.toggle()
   $formInline.toggle()
@@ -17,19 +17,19 @@ function tdInlineHandler(testId) {
 function formInlineHandler(event) {
   event.preventDefault()
 
-  let testId = this.dataset.testId
+  const testId = this.dataset.testId
   tdInlineHandler(testId)
 }
 
 document.addEventListener('turbolinks:load', function() {
-  I18n.locale = $('body').data('locale')
+  I18n.locale = $('html').attr('lang')
 
   $('.form-inline-link').on('click', formInlineHandler)
 
-  let errors = document.querySelector('.resource-errors')
+  const errors = document.querySelector('.resource-errors')
 
   if (errors && document.querySelector('.tests-index')) {
-    let resourceId = errors.dataset.resourceId
+    const resourceId = errors.dataset.resourceId
     tdInlineHandler(resourceId)
   }
 })
