@@ -1,5 +1,11 @@
 <h1>"<%= t('app.test') %><%= @test_passage.test.title %>"</h1><br>
 
+<div class="progress w-50">
+  <%= tag.div class: 'progress-bar',
+              role: 'progressbar',
+              data: { current_index: @test_passage.current_question_index,
+                      total: @test_passage.test.questions.count } %>
+</div>
 <p><%= t('.question', index: @test_passage.current_question_index,
                       q_count: @test_passage.test.questions.count) %>
 </p>

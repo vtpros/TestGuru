@@ -43,6 +43,7 @@ en:
     level: "Level"
     show: "Show"
     edit: "Edit"
+    cancel: "Cancel"
     delete: "Delete"
     sure?: "Are you sure?"
     back: "Back"
@@ -124,6 +125,8 @@ en:
         delete: "Delete"
       test_completeness:
         not_completed: "Selected test has not been completed"
+      form_inline:
+        submit: 'Ok'
     questions:
       create:
         success: "Question was successfully created"

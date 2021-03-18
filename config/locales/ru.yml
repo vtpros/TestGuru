@@ -12,6 +12,7 @@ ru:
     level: "Уровень"
     show: "Перейти"
     edit: "Редактировать"
+    cancel: "Отмена"
     delete: "Удалить"
     sure?: "Вы уверены?"
     back: "Назад"
@@ -88,6 +89,8 @@ ru:
         delete: "Удалить"
       test_completeness:
         not_completed: 'Выбранный тест не завершён'
+      form_inline:
+        submit: 'Ок'
     questions:
       create:
         success: "Вопрос успешно создан"
