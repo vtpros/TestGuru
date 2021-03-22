@@ -8,9 +8,9 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: unicode
-  host: localhost
-  username: <%= ENV['TESTGURU_DATABASE_USERNAME'] %>
-  password: <%= ENV['TESTGURU_DATABASE_PASSWORD'] %>
+  #host: localhost
+  #username: <%= ENV['TESTGURU_DATABASE_USERNAME'] %>
+  #password: <%= ENV['TESTGURU_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
