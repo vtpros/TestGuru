@@ -35,6 +35,7 @@ ru:
     become_guru: "Станьте гуру"
     email: "Введите email"
     gist_question: "Вопрос о %{title} из TestGuru"
+    feedback: "Обратная связь"
     devise:
       forgot: "Забыли ваш пароль?"
       no_confirmation: "Не получили инструкции для подтверждения?"
@@ -129,3 +130,9 @@ ru:
     test_passage:
       completed: "тест завершен"
       continue: "продолжить прохождение"
+  feedbacks:
+    show:
+      leave_feedback: "Напишите нам"
+      send: "Отправить"
+    create:
+      sent: "Письмо было отправлено"

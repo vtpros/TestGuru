@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  resource :feedback, only: %i[show create]
+
   namespace :admin do
     resources :gists, only: %i[index create] do
       delete :destroy, on: :member
