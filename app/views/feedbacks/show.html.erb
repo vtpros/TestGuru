@@ -1,0 +1,22 @@
+<div class="row mt-3">
+  <div class="col col-md-6 mx-auto">
+    <h2><%= t('.leave_feedback') %></h2>
+
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= form_with url: feedback_path, local: true, method: :post do |f| %>
+          <div class="form-group">
+            <p class="field">
+              <%= f.text_area :text, rows: 10, autofocus: true, class: 'form-control' %>
+            </p>
+
+            <p class="actions">
+              <%= f.submit t('.send'), class: "btn btn-primary" %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</br>

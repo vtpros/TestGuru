@@ -67,6 +67,7 @@ en:
     become_guru: "Become a guru"
     email: "Enter email"
     gist_question: "A question about %{title} from TestGuru"
+    feedback: "Feedback"
     devise:
       forgot: "Forgot your password?"
       no_confirmation: "Didn't receive confirmation instructions?"
@@ -165,3 +166,9 @@ en:
     test_passage:
       completed: "test completed"
       continue: "continue test"
+  feedbacks:
+    show:
+      leave_feedback: "Leave feedback"
+      send: "Send"
+    create:
+      sent: "Email has been sent"

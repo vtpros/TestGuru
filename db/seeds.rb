@@ -12,8 +12,8 @@ categories = Category.create!(
 
 users = User.create!(
   [
-    { type: Admin, first_name: 'Vladimir', last_name: 'T', email: 'v@v.com', password: '123123' },
-    { type: User, first_name: 'Vladimir', last_name: 'T', email: 'v@v.ru', password: '123123' }
+    { type: Admin, first_name: 'Vladimir', last_name: 'T', email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PASS'] },
+    { type: User, first_name: 'Vladimir', last_name: 'T', email: ENV['USER_EMAIL'], password: ENV['USER_PASS'] }
   ]
 )
 users.each(&:confirm)
@@ -63,12 +63,3 @@ answers = Answer.create!(
     { body: 'Te liguei', question: questions[7], correct: false }
   ]
 )
-
-# test_passages = TestPassage.create!(
-#   [{ result: nil, completed: false, user: users[0], test: tests[0] }]
-# )
-
-# Should fail
-# answers1 = Answer.create!( [{ body: 'Una agua', question: questions[0], correct: true }] )
-# tests1 = Test.create!( [ { title: 'Basic spanish', level: 1, category: categories[0], author: users[0] } ] )
-# tests1 = Test.create!( [ { title: 'Medium spanish', level: 0, category: categories[0], author: users[0] } ] )
